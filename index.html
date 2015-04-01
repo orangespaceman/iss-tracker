@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>ISS Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+    <div class="map">
+        <!-- the map should appear here... -->
+    </div>
+
+    <div class="sidebar">
+        <h1>Spot the ISS</h1>
+
+        <p class="my-lat-lon">
+            My location:
+            <span class="my-lat"></span>,
+            <span class="my-lon"></span>
+        </p>
+
+        <p class="iss-lat-lon">
+            Current ISS location:
+            <span class="iss-lat"></span>,
+            <span class="iss-lon"></span>
+        </p>
+
+        <p class="flyby">
+            My next ISS flyby will be in <span class="flyby-seconds"></span> seconds <br>
+            on <span class="flyby-date"></span>
+        </p>
+
+        <p class="foot">
+            :)
+        </p>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+
+    <script src="http://thegingerbloke.github.io/lab-badge/lab-badge.min.js"></script>
+
+</body>
+</html>
