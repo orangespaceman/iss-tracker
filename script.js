@@ -18,7 +18,14 @@
 
         // detect whether the user's browser supports geolocation detection
         if('geolocation' in navigator){
-            navigator.geolocation.getCurrentPosition(detectLatlon);
+            // fake location call due to absence of API https access
+            // navigator.geolocation.getCurrentPosition(detectLatlon);
+            detectLatlon({
+                coords: {
+                    latitude: 50.8000,
+                    longitude: -0.3667
+                }
+            });
         }
 
         detectISSLocation();
@@ -63,8 +70,7 @@
 
 
     function detectISSLocation() {
-        // $.getJSON("http://api.open-notify.org/iss-now.json?callback=?", function(data) {
-        $.getJSON("https://fr.sslsecureproxy.com/secure/c0zNiSMWVI0cv4F6XoGby4vEPqIUPnytSUiWAXSTBImMS7v~bJJi8gV91JlavJeIxFJshtKqhDTMd7PsgOJwYw--", function(data) {
+        $.getJSON("http://api.open-notify.org/iss-now.json?callback=?", function(data) {
 
             // check what data has been returned
             console.log(data);
@@ -98,8 +104,7 @@
 
 
     function detectNextISSPass() {
-        // var url = "http://api.open-notify.org/iss-pass.json?lat="+lat+"&lon="+lon+"&callback=?";
-        var url = "https://fr.sslsecureproxy.com/secure/c0zNiSMWVI0cv4F6XoGbyznzsIwQZ7mNS6Fjf842t0oCUQ3Wbf3AY8Ei80w78NcSuan~nhPpwUwd6t9pbwZlc9DXJMaU1umzgzbZBZJ9bEI-";
+        var url = "http://api.open-notify.org/iss-pass.json?lat="+lat+"&lon="+lon+"&callback=?";
         $.getJSON(url, function(data) {
 
             // check what data has been returned
